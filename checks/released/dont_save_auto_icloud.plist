@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>NSGlobalDomain NSDocumentSaveNewDocumentsToCloud</string>
+				<key>ResultDefault</key>
+				<string>1</string>
+				<key>Type</key>
+				<string>defaults</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>Apps, which support iCloud document storage saves new documents automatically on iCloud before they are first manually saved (without asking you). For example TextEdit.app. You should definitely deactivate this.</string>
+			<key>CheckID</key>
+			<string>dont_save_auto_icloud</string>
+			<key>Domain</key>
+			<string>Professional</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>iCloud</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/not-automatically-save-new-documents-icloud/</string>
+			<key>InternalDocLink</key>
+			<string>/x/AYAiAQ</string>
+			<key>Kind</key>
+			<string>Privacy</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>0</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string></string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>none</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>none</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>Severity</key>
+			<string>Medium</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Dont save new documents automatically in iCloud</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>equal</string>
+				<key>Value</key>
+				<string>0</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

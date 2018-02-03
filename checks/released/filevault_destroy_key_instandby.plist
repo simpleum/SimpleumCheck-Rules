@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>pmset -g|grep DestroyFVKeyOnStandby</string>
+				<key>ResultDefault</key>
+				<string>0</string>
+				<key>Type</key>
+				<string>sudo_shell</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>If you use full-disk encryption (FileVault) then your encryption key is stored by default in the EFI BIOS. This helps your Mac while awake from standby/sleep. This is ok for most security requirements, but not totally secure. You can configure your Mac that the key is destroyed when going in standby/sleep mode.</string>
+			<key>CheckID</key>
+			<string>filevault_destroy_key_instandby</string>
+			<key>Domain</key>
+			<string>Paranoid</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>filevault</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/increase-filevault-security-destroying-filevault-keys-standby-mode/</string>
+			<key>InternalDocLink</key>
+			<string>/x/B4AiAQ</string>
+			<key>Kind</key>
+			<string>Security</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>0</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>/usr/bin/fdesetup isactive</string>
+				<key>ResultDefault</key>
+				<string>true</string>
+				<key>Type</key>
+				<string>shell</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>contains</string>
+				<key>Value</key>
+				<string>true</string>
+			</dict>
+			<key>Severity</key>
+			<string>Medium</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Increase FileVault security by destroying FileVault keys in standby mode</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<false/>
+				<key>Type</key>
+				<string>equal</string>
+				<key>Value</key>
+				<string>0</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

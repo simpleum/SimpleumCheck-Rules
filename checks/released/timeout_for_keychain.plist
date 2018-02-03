@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>currentUser=$( ls -l /dev/console | cut -d " " -f4 )
+security show-keychain-info /Users/"$currentUser"/Library/Keychains/login.keychain 2&gt;&amp;1</string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>shell</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>Your default keychain, which is created for you when you set up your Mac, is unlocked automatically when you log in or when you enter your keychain password in an Unlock Keychain dialog. When your Mac is going into sleep mode the keychain should be locked.</string>
+			<key>CheckID</key>
+			<string>timeout_for_keychain</string>
+			<key>Domain</key>
+			<string>Paranoid</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>keychain</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/system-keychain-locked-entering-sleep-mode/</string>
+			<key>InternalDocLink</key>
+			<string></string>
+			<key>Kind</key>
+			<string>Security</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>0</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string></string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>none</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>none</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>Severity</key>
+			<string>Medium</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Define a timeout for inactive login-keychain</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<false/>
+				<key>Type</key>
+				<string>contains</string>
+				<key>Value</key>
+				<string>no-timeout</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

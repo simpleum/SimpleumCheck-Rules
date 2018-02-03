@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>security authorizationdb read system.preferences 2&gt; /dev/null | grep -A1 shared</string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>shell</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>Changes to your system wide preferences should require an administration password. This forces extra awareness and access right checks.</string>
+			<key>CheckID</key>
+			<string>admin_for_systemwide_preferences</string>
+			<key>Domain</key>
+			<string>Professional</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>account</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/administrator-password-recuired-change-system-wide-preferences/</string>
+			<key>InternalDocLink</key>
+			<string>/x/B4AkAQ</string>
+			<key>Kind</key>
+			<string>Security</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>0</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string></string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>none</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>none</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>Severity</key>
+			<string>High</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>An administrator password is required to change system wide preferences</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>contains</string>
+				<key>Value</key>
+				<string>false</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

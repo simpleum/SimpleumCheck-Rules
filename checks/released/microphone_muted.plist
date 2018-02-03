@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>osascript -e "input volume of (get volume settings)"</string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>shell</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>You should mute your microphone, when not in use. This is not a 100% protection against espionage, but helps against normal accidental recording.</string>
+			<key>CheckID</key>
+			<string>microphone_muted</string>
+			<key>Domain</key>
+			<string>Paranoid</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>device</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/mute-microphone-not-used/</string>
+			<key>InternalDocLink</key>
+			<string></string>
+			<key>Kind</key>
+			<string>Privacy</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>1000</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string></string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>none</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>none</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>Severity</key>
+			<string>Medium</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Mute the microphone when not used.</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>equal</string>
+				<key>Value</key>
+				<string>0</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

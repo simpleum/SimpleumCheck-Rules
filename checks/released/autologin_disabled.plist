@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>/Library/Preferences/com.apple.loginwindow  autoLoginUser</string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>defaults</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>"Automatic Login" allows that a given user is automatically logged in, which no need to enter a password. This us obviously not secure, because everybody who has access to your Mac gets in and has access to your data including your keychain (where other passwords are stored).</string>
+			<key>CheckID</key>
+			<string>autologin_disabled</string>
+			<key>Domain</key>
+			<string>Basic</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>account</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/automatic-login-should-be-disabled/</string>
+			<key>InternalDocLink</key>
+			<string>/x/aYAYAQ</string>
+			<key>Kind</key>
+			<string>Security</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>16</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string></string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>none</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>none</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>Severity</key>
+			<string>High</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Automatic login should be disabled</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>equal</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

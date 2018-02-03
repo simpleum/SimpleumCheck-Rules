@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>USERNAME=$( ls -l /dev/console | cut -d " " -f4 )
+FULLNAME=$(finger $(whoami) | perl -ne '/Name: ([a-zA-Z0-9 ]{1,})/ &amp;&amp; print "$1\n"')
+ALL_CHECK_WORDS="$USERNAME $FULLNAME"
+
+LOCALHOSTNAME=$(scutil --get LocalHostName)
+COMPUTERNAME=$(scutil --get ComputerName)
+
+for word in $ALL_CHECK_WORDS
+do
+	if echo "$LOCALHOSTNAME" | grep -i "$word"; then
+  		echo "fail"
+		break
+	else
+		if echo "$COMPUTERNAME" | grep -i "$word"; then
+  			echo "fail"
+			break
+		fi
+	fi
+done
+</string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>shell</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>Your user name and password are very important to get into your Mac. Knowing or good guessing of your user name is important for every attacker. Do not use your user name or full name as your computer name. It is easy to discover your computer name.</string>
+			<key>CheckID</key>
+			<string>hostname_without_username</string>
+			<key>Domain</key>
+			<string>Professional</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>account</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/hostname-should-not-contain-your-name/</string>
+			<key>InternalDocLink</key>
+			<string>/x/EIAiAQ</string>
+			<key>Kind</key>
+			<string>Security</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>0</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string></string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>none</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>none</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>Severity</key>
+			<string>Medium</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Hostname should not contain your name</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<false/>
+				<key>Type</key>
+				<string>contains</string>
+				<key>Value</key>
+				<string>fail</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

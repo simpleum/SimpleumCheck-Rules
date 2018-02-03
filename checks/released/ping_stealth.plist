@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>/usr/libexec/ApplicationFirewall/socketfilterfw --getstealthmode</string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>shell</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>Normally every computer in a network response to a ping request. This is often used to know if a computer or server is reachable. Many attacks start with a network scan: try to ping every IP address in the network, to know on which IP address a computer is available.</string>
+			<key>CheckID</key>
+			<string>ping_stealth</string>
+			<key>Domain</key>
+			<string>Professional</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>firewall</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/dont-respond-icmp-ping-network-requests-firewall-im-stealth-mode/</string>
+			<key>InternalDocLink</key>
+			<string></string>
+			<key>Kind</key>
+			<string>Security</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>0</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>/Library/Preferences/com.apple.alf globalstate</string>
+				<key>ResultDefault</key>
+				<string>0</string>
+				<key>Type</key>
+				<string>defaults</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>equal</string>
+				<key>Value</key>
+				<string>1</string>
+			</dict>
+			<key>Severity</key>
+			<string>Medium</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Dont respond to ICMP ping network requests (Firewall in stealth mode)</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>contains</string>
+				<key>Value</key>
+				<string>enabled</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>systemsetup -getremoteappleevents</string>
+				<key>ResultDefault</key>
+				<string>0</string>
+				<key>Type</key>
+				<string>sudo_shell</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>If you enable Remote Apple Events (RAE), you allow your computer to respond to events sent by other computers on your network. These events include AppleScript programs. There should normally no need to enable this service.</string>
+			<key>CheckID</key>
+			<string>disable_remote_events</string>
+			<key>Domain</key>
+			<string>Professional</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>services</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/apple-remote-events-disabled/</string>
+			<key>InternalDocLink</key>
+			<string>/x/BYAkAQ</string>
+			<key>Kind</key>
+			<string>Security</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>0</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string></string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>none</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>none</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>Severity</key>
+			<string>High</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Apple Remote events should be disabled</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>equal</string>
+				<key>Value</key>
+				<string>Remote Apple Events: Off</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>

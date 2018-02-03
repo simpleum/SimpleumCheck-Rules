@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FormatVersion</key>
+	<string>1</string>
+	<key>Rules</key>
+	<array>
+		<dict>
+			<key>Available</key>
+			<dict>
+				<key>FromVersion</key>
+				<string>10.11</string>
+				<key>ToVersion</key>
+				<string>*</string>
+			</dict>
+			<key>CheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string>IS_COMPUTERNAME_SCS=$(defaults -currentHost read com.apple.screensaver moduleDict |egrep -c "Computer Name" 2&gt;/dev/null)
+if [ "$IS_COMPUTERNAME_SCS" != "0" ] ; then
+	MESSAGE=$(defaults -currentHost read com.apple.screensaver.basic MESSAGE 2&gt;/dev/null)
+	if [ "$MESSAGE" == "" ]; then
+		echo "fail"
+	else
+		echo "pass"
+	fi 
+else
+	echo "pass2"
+fi</string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>shell</string>
+			</dict>
+			<key>CheckDescription</key>
+			<string>There is no need to show your computer name while the screen saver is running. But some screen savers have this as a default. An attacker get knowledge which computer in the network is yours.</string>
+			<key>CheckID</key>
+			<string>screensaver_without_hostname</string>
+			<key>Domain</key>
+			<string>Professional</string>
+			<key>Enabled</key>
+			<true/>
+			<key>Group</key>
+			<string>account</string>
+			<key>InfoLink</key>
+			<string>https://simpleum.com/en/faq-items/dont-show-computer-name-screen-saver-running/</string>
+			<key>InternalDocLink</key>
+			<string>/x/EoAiAQ</string>
+			<key>Kind</key>
+			<string>Security</string>
+			<key>Meta</key>
+			<dict>
+				<key>Author</key>
+				<string>Simpleum Media GmbH</string>
+				<key>Copyright</key>
+				<string>(c) 2018 by Simpleum Media GmbH</string>
+				<key>Notes</key>
+				<string></string>
+				<key>Version</key>
+				<string>1.0.0</string>
+			</dict>
+			<key>Order</key>
+			<integer>0</integer>
+			<key>PreconditionCheckAction</key>
+			<dict>
+				<key>Action</key>
+				<string></string>
+				<key>ResultDefault</key>
+				<string></string>
+				<key>Type</key>
+				<string>none</string>
+			</dict>
+			<key>PreconditionValidation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>none</string>
+				<key>Value</key>
+				<string></string>
+			</dict>
+			<key>Severity</key>
+			<string>Low</string>
+			<key>ShowResult</key>
+			<false/>
+			<key>Title</key>
+			<string>Dont show your computer name while screen saver is running</string>
+			<key>Validation</key>
+			<dict>
+				<key>IsSuccess</key>
+				<true/>
+				<key>Type</key>
+				<string>contains</string>
+				<key>Value</key>
+				<string>pass</string>
+			</dict>
+			<key>WorkflowState</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>RulesVersion</key>
+	<string>1</string>
+</dict>
+</plist>
