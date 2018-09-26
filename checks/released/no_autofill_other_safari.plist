@@ -12,7 +12,7 @@
 				<key>FromVersion</key>
 				<string>10.11</string>
 				<key>ToVersion</key>
-				<string>*</string>
+				<string>10.13</string>
 			</dict>
 			<key>CheckAction</key>
 			<dict>
@@ -30,7 +30,7 @@
 			<key>Domain</key>
 			<string>Professional</string>
 			<key>Enabled</key>
-			<true/>
+			<false/>
 			<key>Group</key>
 			<string>safari</string>
 			<key>InfoLink</key>

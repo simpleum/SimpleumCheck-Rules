@@ -17,7 +17,7 @@
 			<key>CheckAction</key>
 			<dict>
 				<key>Action</key>
-				<string>-u _locationd defaults -currentHost read com.apple.locationd </string>
+				<string>sudo -u _locationd defaults -currentHost read com.apple.locationd </string>
 				<key>ResultDefault</key>
 				<string></string>
 				<key>Type</key>
@@ -48,7 +48,7 @@
 				<key>Notes</key>
 				<string></string>
 				<key>Version</key>
-				<string>1.0.0</string>
+				<string>1.1.0</string>
 			</dict>
 			<key>Order</key>
 			<integer>0</integer>

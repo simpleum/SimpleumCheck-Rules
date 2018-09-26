@@ -10,41 +10,36 @@
 			<key>Available</key>
 			<dict>
 				<key>FromVersion</key>
-				<string>10.11</string>
+				<string>10.14</string>
 				<key>ToVersion</key>
 				<string>*</string>
 			</dict>
 			<key>CheckAction</key>
 			<dict>
 				<key>Action</key>
-				<string>AUTOUPDATE=$(defaults read /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled)
-CRITICALUPDATE=$(defaults read /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall)
-if [ \( "$AUTOUPDATE" == "" -o  "$AUTOUPDATE" == "1" \) -a \( "$CRITICALUPDATE" == "" -o  "$CRITICALUPDATE" == "1"  \) ]; then
-	echo "ON"
-else
-	echo "OFF"
-fi</string>
+				<string>currentUser=$( ls -l /dev/console | cut -d " " -f4 )
+defaults read /Users/"$currentUser"/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari AlwaysRestoreSessionAtLaunch</string>
 				<key>ResultDefault</key>
-				<string>1</string>
+				<string></string>
 				<key>Type</key>
 				<string>shell</string>
 			</dict>
 			<key>CheckDescription</key>
-			<string>Some critical security updates for your Mac are released as automatic updates. Your Mac checks for these updates frequently, and when an automatic security update is available, it installs automatically and displays a notification.</string>
+			<string>Safari can start with restoring the last state of open windows and tabs. If you do not want, that others can see on which websites you have been in your last session, than deactivate this functionality.</string>
 			<key>CheckID</key>
-			<string>install_critical_updates_automatically</string>
+			<string>dont_restore_safari_windows_10_14</string>
 			<key>Domain</key>
-			<string>Basic</string>
+			<string>Paranoid</string>
 			<key>Enabled</key>
 			<true/>
 			<key>Group</key>
-			<string>software update</string>
+			<string>safari</string>
 			<key>InfoLink</key>
-			<string>https://simpleum.com/en/faq-items/install-software-updates-automatically/</string>
+			<string>https://simpleum.com/en/faq-items/not-restore-windows-last-use-lauching-safari/</string>
 			<key>InternalDocLink</key>
-			<string>/x/gIAYAQ</string>
+			<string></string>
 			<key>Kind</key>
-			<string>Security</string>
+			<string>Privacy</string>
 			<key>Meta</key>
 			<dict>
 				<key>Author</key>
@@ -52,12 +47,12 @@ fi</string>
 				<key>Copyright</key>
 				<string>(c) 2018 by Simpleum Media GmbH</string>
 				<key>Notes</key>
-				<string>abc</string>
+				<string></string>
 				<key>Version</key>
-				<string>1.0.0</string>
+				<string>2.0.0</string>
 			</dict>
 			<key>Order</key>
-			<integer>62</integer>
+			<integer>0</integer>
 			<key>PreconditionCheckAction</key>
 			<dict>
 				<key>Action</key>
@@ -77,19 +72,19 @@ fi</string>
 				<string></string>
 			</dict>
 			<key>Severity</key>
-			<string>High</string>
+			<string>Low</string>
 			<key>ShowResult</key>
 			<false/>
 			<key>Title</key>
-			<string>Install critical updates and data files automatically</string>
+			<string>Do not restore windows from last use when lauching Safari</string>
 			<key>Validation</key>
 			<dict>
 				<key>IsSuccess</key>
-				<true/>
+				<false/>
 				<key>Type</key>
 				<string>equal</string>
 				<key>Value</key>
-				<string>ON</string>
+				<string>1</string>
 			</dict>
 			<key>WorkflowState</key>
 			<string></string>

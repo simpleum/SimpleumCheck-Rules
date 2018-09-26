@@ -10,7 +10,7 @@ We publish the used checks (aka "rules") in this repository.
 SimpleumCheck contains a all-in-one check file. While developing checks we us one file for every check.
 
 * Released checks are at `checks/released`
-* Check in development are at `checks/development`
+* Checks in development are at `checks/development`
 * Special checks (see below) are at `checks/special`
 
 

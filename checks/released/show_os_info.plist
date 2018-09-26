@@ -86,7 +86,7 @@
 				<string>Automatic check is on</string>
 			</dict>
 			<key>WorkflowState</key>
-			<string>todo</string>
+			<string></string>
 		</dict>
 	</array>
 	<key>RulesVersion</key>

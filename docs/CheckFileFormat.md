@@ -73,7 +73,7 @@ To learn more about writing checks, have a look at the released checks.
 	* `Value`(String): value to be "equal" or "contain"
 
 #### Precondition Check-Attributes
-A check will only be executed, if the precondition is fullfilled, otherwise the check result will not be show. Example: To check if the built-in firewall is in stealth mode does only makes sense, when the built-in firewall is active.
+A check will only be executed, if the precondition is fullfilled, otherwise the check result will not be shown. Example: To check if the built-in firewall is in stealth mode does only makes sense, when the built-in firewall is active.
 If the check has no precondition choose Type = "none".
 
 * `PreconditionCheckAction`(Dictionary) Execution of the main check
